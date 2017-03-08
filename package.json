@@ -1,0 +1,13 @@
+{
+  "name": "TUKid-backend",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "~1.0.1",
+    "crypto": "~0.0.3",
+    "express": "~4.0.0",
+    "lodash": "^4.17.4",
+    "mysql": "~2.5.0",
+    "node-validator": "^0.1.26",
+    "sequelize": "^3.30.2"
+  }
+}
