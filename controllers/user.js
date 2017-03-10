@@ -9,7 +9,7 @@ const Validator = require('node-validator');
 const Util      = require('./util');
 
 function washResult(result) {
-    return _.pick(result, ['id', 'name', 'createdAt', 'updatedAt']);
+    return _.pick(result, ['id', 'nick_name', 'phone', 'openid']);
 }
 
 exports.get = function(req, res, next) {
@@ -66,9 +66,10 @@ exports.post = function(req, res, next) {
     let resData = {};
     let check = Validator
         .isObject()
-        .withRequired('name', Validator.isString());
+        .withRequired('openid', Validator.isString())
+        .withRequired('nick_name', Validator.isString());
     // 验证body
-    body = _.pick(body, ['name']);
+    body = _.pick(body, ['openid', 'nick_name']);
     Validator.run(check, body, function(errorCount, errors) {
         if(errorCount) {
             resData.success = false;
@@ -96,9 +97,9 @@ exports.put = function(req, res, next) {
     let resData = {};
     let check = Validator
         .isObject()
-        .withOptional('name', Validator.isString());
+        .withOptional('phone', Validator.isString());
     // 验证body
-    body = _.pick(body, ['name']);
+    body = _.pick(body, ['phone']);
     Validator.run(check, body, function(errorCount, errors) {
         if(errorCount) {
             resData.success = false;

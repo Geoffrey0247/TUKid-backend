@@ -12,9 +12,17 @@ let schemas = {
         primaryKey: true,
         autoIncrement: true
     },
-    name: {
+    nick_name: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    openid: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    phone: {
+        type: Sequelize.STRING,
+        allowNull: true
     }
 }
 
