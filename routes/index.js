@@ -13,7 +13,7 @@ module.exports = exports = function () {
     //router.get('/', (req, res) => { return res.redirect('/dashboard') });
 
     // restful接口
-    let modelList = ['user'];
+    let modelList = ['user','test'];
     modelList.forEach(function(model) {
         let snakeModelName = _.snakeCase(model);
         router.get    (prefix + `/${model}`,     require(`../controllers/${snakeModelName}`).get    );
