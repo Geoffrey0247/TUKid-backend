@@ -3,8 +3,14 @@
  */
 'use strict'
 
-exports.port = process.env.PORT || '3000';
+exports.port = process.env.PORT || '8008';
 
 exports.mysql = {
-    url: 'mysql://root@localhost:3306/test'
+    url: ''
+};
+
+exports.alidayu = {
+    appkey: '',
+    appsecret: '',
+    REST_URL: ''
 };
