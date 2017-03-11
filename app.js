@@ -25,6 +25,15 @@ app.use(bodyParser.json());
 var sequelize = new Sequelize(app.config.mysql.url, { logging: false });
 app.db = sequelize;
 
+// init alidayu
+var TopClient = require('./vendor/alidayu/topClient').TopClient;
+var client = new TopClient({
+    'appkey': app.config.alidayu.appkey,
+    'appsecret': app.config.alidayu.appsecret,
+    'REST_URL': app.config.alidayu.REST_URL
+});
+app.alidayuClient = client;
+
 // base route for API
 // ====================================================================================================
 app.use('/', initRoutes());

@@ -22,6 +22,8 @@ module.exports = exports = function () {
         router.put    (prefix + `/${model}/:id`, require(`../controllers/${snakeModelName}`).put    );
         router.delete (prefix + `/${model}/:id`, require(`../controllers/${snakeModelName}`).delete );
     });
+    router.post(prefix + '/sendSmsCode', require("../controllers/sms").sendSmsCode);
+    router.post(prefix + '/verifySmsCode', require("../controllers/sms").verifySmsCode);
 
     return router;
 };

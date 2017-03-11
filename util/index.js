@@ -6,6 +6,7 @@
 var http = require("http");
 var url = require("url");
 var querystring = require('querystring');
+var moment = require('moment-timezone');
 
 exports.httpGet = function (strUrl) {
     return new Promise((resolve, reject) => {
@@ -53,3 +54,19 @@ exports.httpPost = function (strUrl, postData) {
         req.end();
     });
 };
+
+/**
+ * Get now timestamp with 'yyyy-MM-dd HH:mm:ss' format.
+ * @return {String}
+ */
+exports.getCurrentTime = function () {
+    return moment(new Date()).tz("Asia/Shanghai").format('YYYY-MM-DD HH:mm:ss');
+}
+
+/**
+ * Get random sms code.
+ * @return {String}
+ */
+exports.getSmsCode = function () {
+    return Math.floor(Math.random() * 999999).toS;
+}
