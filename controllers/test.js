@@ -7,9 +7,10 @@
 const Util      = require('../util');
 
 exports.get = function(req, res, next) {
-    Util.httpGet("http://localhost:3000/api/user").then(res => {
-        console.log(res);
-    });
+    // Util.httpGet("http://localhost:3000/api/user").then(res => {
+    //     console.log(res);
+    // });
+    console.log(Util.getCurrentTime());
 };
 
 exports.getById = function(req, res, next) {
